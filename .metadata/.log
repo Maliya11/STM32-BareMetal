@@ -22,3 +22,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-06-03 21:32:50.875
 !MESSAGE Indexed '1_led_toggle_addr_struct' (3 sources, 0 headers) in 0.046 sec: 68 declarations; 104 references; 10 unresolved inclusions; 0 syntax errors; 31 unresolved names (15%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-04 12:10:01.974
+!MESSAGE Indexed '2_gpio_output' (3 sources, 53 headers) in 1.4 sec: 1,950 declarations; 2,831 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
