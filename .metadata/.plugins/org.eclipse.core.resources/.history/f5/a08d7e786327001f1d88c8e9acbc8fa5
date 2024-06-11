@@ -1,0 +1,10 @@
+/*
+ * adc.c
+ *
+ *  Created on: Jun 11, 2024
+ *      Author: ACER
+ */
+
+#define ADC1EN      (1U<<9)
+
+

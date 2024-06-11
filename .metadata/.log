@@ -31,3 +31,30 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-06-04 14:50:59.327
 !MESSAGE Indexed '4_gpio_input' (3 sources, 59 headers) in 0.527 sec: 2,540 declarations; 3,523 references; 3 unresolved inclusions; 23 syntax errors; 482 unresolved names (7.4%)
+!SESSION 2024-06-10 12:56:36.028 -----------------------------------------------
+eclipse.buildId=Version 1.14.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-06-10 12:56:59.753
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-06-10 12:56:59.753
+!MESSAGE Log4j2 initialized with config file C:\Users\ACER\Documents\GitHub\STM32-BareMetal\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-06-10 12:57:15.260
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-10 12:57:44.764
+!MESSAGE Indexed '5_uart_tx' (3 sources, 59 headers) in 2.85 sec: 2,538 declarations; 3,558 references; 3 unresolved inclusions; 23 syntax errors; 482 unresolved names (7.3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-11 00:48:43.293
+!MESSAGE Indexed '9_adc' (3 sources, 59 headers) in 2.05 sec: 2,538 declarations; 3,474 references; 3 unresolved inclusions; 23 syntax errors; 482 unresolved names (7.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-11 08:48:20.117
+!MESSAGE Indexed '9_adc_single_conversion' (4 sources, 64 headers) in 1.05 sec: 2,819 declarations; 4,489 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.027%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-11 08:49:43.835
+!MESSAGE Indexed '10_adc_continous_conversion' (4 sources, 64 headers) in 0.93 sec: 2,819 declarations; 4,489 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.027%)

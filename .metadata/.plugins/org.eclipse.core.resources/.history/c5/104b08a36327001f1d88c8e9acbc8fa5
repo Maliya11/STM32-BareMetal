@@ -1,0 +1,16 @@
+/*
+ * adc.c
+ *
+ *  Created on: Jun 11, 2024
+ *      Author: ACER
+ */
+
+#define ADC1EN      (1U<<9)
+#define GPIOAENR    (1U<<2)
+
+
+void pa1_adc_init(void)
+{
+
+}
+

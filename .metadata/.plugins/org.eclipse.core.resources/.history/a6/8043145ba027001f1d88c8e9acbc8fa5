@@ -1,0 +1,17 @@
+#include "stm32f1xx.h"
+#include <stdio.h>
+#include <stdint.h>
+#include "adc.h"
+
+
+
+int main(void)
+{
+
+	pa1_adc_init();
+
+	while(1)
+	{
+
+	}
+}

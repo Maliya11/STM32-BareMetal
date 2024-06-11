@@ -1,0 +1,23 @@
+/*
+ * adc.c
+ *
+ *  Created on: Jun 11, 2024
+ *      Author: ACER
+ */
+
+#define ADC1EN      (1U<<9)
+#define GPIOAEN    (1U<<2)
+
+
+void pa1_adc_init(void)
+{
+	/*Configure the ADC GPIO pin*/
+
+	/*Enable clock access to GPIOA*/
+	RCC->APB2ENR |= GPIOAEN;
+
+
+
+
+}
+
