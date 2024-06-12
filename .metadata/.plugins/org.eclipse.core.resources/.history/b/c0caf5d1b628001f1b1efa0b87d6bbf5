@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f1xx.h"
+#include "uart.h"
+
+
+char key;
+
+int main(void)
+{
+
+	uart1_rxtx_init();
+
+	while(1)
+	{
+		key = uart_read();
+	}
+}
+
+
+
+

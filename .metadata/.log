@@ -58,3 +58,27 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-06-11 08:49:43.835
 !MESSAGE Indexed '10_adc_continous_conversion' (4 sources, 64 headers) in 0.93 sec: 2,819 declarations; 4,489 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.027%)
+!SESSION 2024-06-12 12:40:27.861 -----------------------------------------------
+eclipse.buildId=Version 1.14.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-06-12 12:40:50.117
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-06-12 12:40:50.127
+!MESSAGE Log4j2 initialized with config file C:\Users\ACER\Documents\GitHub\STM32-BareMetal\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-06-12 12:41:03.187
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-12 17:23:14.910
+!MESSAGE Indexed '6_uart_printf' (5 sources, 59 headers) in 1.77 sec: 2,640 declarations; 3,737 references; 4 unresolved inclusions; 23 syntax errors; 492 unresolved names (7.2%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-12 17:27:01.245
+!MESSAGE Indexed '7_uart_modular' (5 sources, 59 headers) in 1.18 sec: 2,644 declarations; 3,743 references; 5 unresolved inclusions; 23 syntax errors; 492 unresolved names (7.2%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-12 17:32:31.517
+!MESSAGE Indexed '8_uart_rx' (4 sources, 60 headers) in 0.68 sec: 2,562 declarations; 3,581 references; 6 unresolved inclusions; 23 syntax errors; 482 unresolved names (7.3%)

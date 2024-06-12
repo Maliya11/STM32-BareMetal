@@ -1,0 +1,38 @@
+#include "stm32f1xx.h"
+
+
+#define GPIOA_EN           (1U<<2)
+#define UART2_EN           (1U<<13)
+
+
+int main(void)
+{
+
+
+	while(1)
+	{
+
+	}
+}
+
+void uart1_tx_init(void)
+{
+	/*******Configure usart gpio pins*********/
+	/*Enable clock access to gpioa*/
+	RCC->APB2ENR |= GPIOA_EN;
+
+	/*Set PA9 to alternate function mode*/
+	GPIOA->CRH |= (1U<<4);
+	GPIOA->CRH |= (1U<<5);
+	GPIOA->CRH &= ~(1U<<6);
+	GPIOA->CRH |= (1U<<7);
+
+	/*Set PA2 type to UART_TX*/
+	AFIO->MAPR &= ~(1U<<2);
+
+	/**********Configure uart module**************/
+	/*Enable clock access to uart1*/
+	/*configure baudrate*/
+	/*Configure transfer direction*/
+	/*Enable uart module*/
+}

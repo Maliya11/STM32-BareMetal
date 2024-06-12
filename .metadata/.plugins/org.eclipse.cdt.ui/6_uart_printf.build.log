@@ -1,0 +1,20 @@
+17:25:31 **** Build of configuration Debug for project 6_uart_printf ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "6_uart_printf.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\6_uart_printf\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6_uart_printf.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6_uart_printf.elf
+ 
+arm-none-eabi-size  6_uart_printf.elf 
+arm-none-eabi-objdump -h -S 6_uart_printf.elf  > "6_uart_printf.list"
+arm-none-eabi-objcopy  -O ihex 6_uart_printf.elf  "6_uart_printf.hex"
+   text	   data	    bss	    dec	    hex	filename
+   4880	    100	   1900	   6880	   1ae0	6_uart_printf.elf
+Finished building: default.size.stdout
+ 
+Finished building: 6_uart_printf.hex
+Finished building: 6_uart_printf.list
+ 
+ 
+
+17:25:32 Build Finished. 0 errors, 0 warnings. (took 749ms)
+

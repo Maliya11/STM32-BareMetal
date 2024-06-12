@@ -1,18 +1,27 @@
-08:52:01 **** Build of configuration Debug for project 10_adc_continous_conversion ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/adc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/adc.d" -MT"Src/adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/adc.o"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "10_adc_continous_conversion.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\10_adc_continous_conversion\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="10_adc_continous_conversion.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 10_adc_continous_conversion.elf
+17:58:36 **** Clean-only build of configuration Debug for project 8_uart_rx ****
+make -j8 clean 
+rm -rf ./Startup/startup_stm32f103c8tx.d ./Startup/startup_stm32f103c8tx.o
+rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/uart.cyclo ./Src/uart.d ./Src/uart.o ./Src/uart.su
+rm -rf 8_uart_rx.elf 8_uart_rx.hex 8_uart_rx.list 8_uart_rx.map default.size.stdout
  
-arm-none-eabi-size  10_adc_continous_conversion.elf 
-arm-none-eabi-objdump -h -S 10_adc_continous_conversion.elf  > "10_adc_continous_conversion.list"
-arm-none-eabi-objcopy  -O ihex 10_adc_continous_conversion.elf  "10_adc_continous_conversion.hex"
+17:58:37 **** Incremental Build of configuration Debug for project 8_uart_rx ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c8tx.d" -MT"Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "8_uart_rx.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\8_uart_rx\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_rx.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_rx.elf
+ 
+arm-none-eabi-size  8_uart_rx.elf 
+arm-none-eabi-objdump -h -S 8_uart_rx.elf  > "8_uart_rx.list"
    text	   data	    bss	    dec	    hex	filename
-    772	      8	   1568	   2348	    92c	10_adc_continous_conversion.elf
+    984	      8	   1568	   2560	    a00	8_uart_rx.elf
+arm-none-eabi-objcopy  -O ihex 8_uart_rx.elf  "8_uart_rx.hex"
 Finished building: default.size.stdout
  
-Finished building: 10_adc_continous_conversion.hex
-Finished building: 10_adc_continous_conversion.list
+Finished building: 8_uart_rx.list
+Finished building: 8_uart_rx.hex
  
  
