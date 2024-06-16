@@ -1,0 +1,16 @@
+#include "tim.h"
+
+#define TIM2EN     (1U<<0)
+
+void tim2_1Hz_init(void)
+{
+	/*Enable clock access to TIM2*/
+	/*Set pre-scalar value*/
+	/*Set auto reload value*/
+	/*clean counter*/
+	/*Enable timer*/
+}
+
+
+
+

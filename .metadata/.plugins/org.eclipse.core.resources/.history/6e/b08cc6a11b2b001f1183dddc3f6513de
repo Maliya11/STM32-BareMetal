@@ -1,0 +1,17 @@
+/*
+ * tim.c
+ *
+ *  Created on: Jun 15, 2024
+ *      Author: ACER
+ */
+
+#include "tim.h"
+
+void tim2_1Hz_init(void)
+{
+
+}
+
+
+
+

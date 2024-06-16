@@ -1,0 +1,24 @@
+#include "tim.h"
+
+#define TIM2EN     (1U<<0)
+
+void tim2_1Hz_init(void)
+{
+	/*Enable clock access to TIM2*/
+	RCC->APB1ENR |= TIM2EN;
+
+	/*Set pre-scalar value*/
+	TIM2->PSC = 1600-1;  /* 16MHz/1600 = 10kHz */
+
+	/*Set auto reload value*/
+	TIM2->ARR = 10000 - 1; /* 10kHz/10000 = 1Hz */
+
+	/*clean counter*/
+
+
+	/*Enable timer*/
+}
+
+
+
+
