@@ -33,37 +33,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 12_timers
+BUILD_ARTIFACT_NAME := 13_OutputCompare
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-12_timers.elf \
+13_OutputCompare.elf \
 
 MAP_FILES += \
-12_timers.map \
+13_OutputCompare.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-12_timers.list \
+13_OutputCompare.list \
 
 OBJCOPY_HEX += \
-12_timers.hex \
+13_OutputCompare.hex \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 12_timers.elf secondary-outputs
+main-build: 13_OutputCompare.elf secondary-outputs
 
 # Tool invocations
-12_timers.elf 12_timers.map: $(OBJS) $(USER_OBJS) C:\Users\ACER\Documents\GitHub\STM32-BareMetal\12_timers\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "12_timers.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\12_timers\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="12_timers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+13_OutputCompare.elf 13_OutputCompare.map: $(OBJS) $(USER_OBJS) C:\Users\ACER\Documents\GitHub\STM32-BareMetal\13_OutputCompare\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "13_OutputCompare.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\13_OutputCompare\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_OutputCompare.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -72,19 +72,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-12_timers.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "12_timers.list"
+13_OutputCompare.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "13_OutputCompare.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-12_timers.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "12_timers.hex"
+13_OutputCompare.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "13_OutputCompare.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 12_timers.elf 12_timers.hex 12_timers.list 12_timers.map default.size.stdout
+	-$(RM) 13_OutputCompare.elf 13_OutputCompare.hex 13_OutputCompare.list 13_OutputCompare.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)

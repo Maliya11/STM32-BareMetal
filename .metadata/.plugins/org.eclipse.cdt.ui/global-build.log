@@ -1,7 +1,18 @@
-19:57:06 **** Incremental Build of configuration Debug for project 12_timers ****
+10:49:20 **** Incremental Build of configuration Debug for project 14_InputCapture ****
 make -j8 all 
-arm-none-eabi-size  12_timers.elf 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/tim.d" -MT"Src/tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/tim.o"
+arm-none-eabi-gcc -o "14_InputCapture.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\14_InputCapture\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="14_InputCapture.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 14_InputCapture.elf
+ 
+arm-none-eabi-size  14_InputCapture.elf 
+arm-none-eabi-objdump -h -S 14_InputCapture.elf  > "14_InputCapture.list"
+arm-none-eabi-objcopy  -O ihex 14_InputCapture.elf  "14_InputCapture.hex"
    text	   data	    bss	    dec	    hex	filename
-   5060	    100	   1900	   7060	   1b94	12_timers.elf
+    904	      8	   1568	   2480	    9b0	14_InputCapture.elf
 Finished building: default.size.stdout
+ 
+Finished building: 14_InputCapture.hex
+Finished building: 14_InputCapture.list
+ 
  

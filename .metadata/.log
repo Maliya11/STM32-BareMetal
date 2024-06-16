@@ -263,3 +263,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-06-16 09:06:52.684
 !MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-16 09:49:33.797
+!MESSAGE Indexed '14_InputCapture' (7 sources, 68 headers) in 2.46 sec: 2,869 declarations; 4,853 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.026%)
