@@ -1,0 +1,20 @@
+22:01:40 **** Incremental Build of configuration Debug for project 18_systick_interrupt ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "18_systick_interrupt.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\18_systick_interrupt\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18_systick_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18_systick_interrupt.elf
+ 
+arm-none-eabi-size  18_systick_interrupt.elf 
+arm-none-eabi-objdump -h -S 18_systick_interrupt.elf  > "18_systick_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   5048	    100	   1900	   7048	   1b88	18_systick_interrupt.elf
+arm-none-eabi-objcopy  -O ihex 18_systick_interrupt.elf  "18_systick_interrupt.hex"
+Finished building: default.size.stdout
+ 
+Finished building: 18_systick_interrupt.hex
+Finished building: 18_systick_interrupt.list
+ 
+ 
+
+22:01:41 Build Finished. 0 errors, 0 warnings. (took 785ms)
+

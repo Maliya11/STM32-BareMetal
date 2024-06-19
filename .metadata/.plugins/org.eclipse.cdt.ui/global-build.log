@@ -1,18 +1,18 @@
-21:48:57 **** Incremental Build of configuration Debug for project 17_adc_interrupt ****
+22:09:40 **** Build of configuration Debug for project 19_timers_interrupt ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/adc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/adc.d" -MT"Src/adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/adc.o"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "17_adc_interrupt.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\17_adc_interrupt\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="17_adc_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 17_adc_interrupt.elf
+arm-none-eabi-gcc "../Src/tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -DSTM32F103xB -c -I../Inc -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Device/ST/STM32F1xx/Include" -I"C:/Users/ACER/Documents/GitHub/STM32-BareMetal/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/tim.d" -MT"Src/tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/tim.o"
+arm-none-eabi-gcc -o "19_timers_interrupt.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\19_timers_interrupt\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="19_timers_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 19_timers_interrupt.elf
  
-arm-none-eabi-size  17_adc_interrupt.elf 
-arm-none-eabi-objdump -h -S 17_adc_interrupt.elf  > "17_adc_interrupt.list"
-arm-none-eabi-objcopy  -O ihex 17_adc_interrupt.elf  "17_adc_interrupt.hex"
+arm-none-eabi-size  19_timers_interrupt.elf 
+arm-none-eabi-objdump -h -S 19_timers_interrupt.elf  > "19_timers_interrupt.list"
+arm-none-eabi-objcopy  -O ihex 19_timers_interrupt.elf  "19_timers_interrupt.hex"
    text	   data	    bss	    dec	    hex	filename
-    864	      8	   1568	   2440	    988	17_adc_interrupt.elf
+   5148	    100	   1900	   7148	   1bec	19_timers_interrupt.elf
 Finished building: default.size.stdout
  
-Finished building: 17_adc_interrupt.hex
-Finished building: 17_adc_interrupt.list
+Finished building: 19_timers_interrupt.hex
+Finished building: 19_timers_interrupt.list
  
  
