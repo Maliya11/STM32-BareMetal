@@ -14,8 +14,8 @@
 #define ADC_SEQ_LEN_1      0x00
 #define CR2_ADON          (1U<<0)
 #define CR2_SWSTART       (1U<<30)
-#define SR_EOC            (1U<<1)
 #define CR2_CONT          (1U<<1)
+#define CR1_EOCIE         (1U<<5)
 
 void pa1_adc_interrupt_init(void)
 {
@@ -34,11 +34,18 @@ void pa1_adc_interrupt_init(void)
 	/*Clock access to ADC module*/
 	RCC->APB2ENR |= ADC1EN;
 
+	/*Enable ADC end-of-conversion interrupt*/
+	ADC1->CR1 |= CR1_EOCIE;
+
+	/*Enable ADC IRQ in NVIC*/
+	NVIC_EnableIRQ(ADC1_2_IRQn);
+
 	/*Conversion sequence start*/
 	ADC1->SQR3 = ADC_CH1;
 
 	/*Conversion sequence length*/
 	ADC1->SQR1 = ADC_SEQ_LEN_1;
+
 
 	/*Enable ADC module*/
 	ADC1->CR2 |= CR2_ADON;

@@ -33,37 +33,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 10_adc_continous_conversion
+BUILD_ARTIFACT_NAME := 17_adc_interrupt
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-10_adc_continous_conversion.elf \
+17_adc_interrupt.elf \
 
 MAP_FILES += \
-10_adc_continous_conversion.map \
+17_adc_interrupt.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-10_adc_continous_conversion.list \
+17_adc_interrupt.list \
 
 OBJCOPY_HEX += \
-10_adc_continous_conversion.hex \
+17_adc_interrupt.hex \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 10_adc_continous_conversion.elf secondary-outputs
+main-build: 17_adc_interrupt.elf secondary-outputs
 
 # Tool invocations
-10_adc_continous_conversion.elf 10_adc_continous_conversion.map: $(OBJS) $(USER_OBJS) C:\Users\ACER\Documents\GitHub\STM32-BareMetal\10_adc_continous_conversion\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "10_adc_continous_conversion.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\10_adc_continous_conversion\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="10_adc_continous_conversion.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+17_adc_interrupt.elf 17_adc_interrupt.map: $(OBJS) $(USER_OBJS) C:\Users\ACER\Documents\GitHub\STM32-BareMetal\17_adc_interrupt\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "17_adc_interrupt.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\17_adc_interrupt\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="17_adc_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -72,19 +72,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-10_adc_continous_conversion.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "10_adc_continous_conversion.list"
+17_adc_interrupt.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "17_adc_interrupt.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-10_adc_continous_conversion.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "10_adc_continous_conversion.hex"
+17_adc_interrupt.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "17_adc_interrupt.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 10_adc_continous_conversion.elf 10_adc_continous_conversion.hex 10_adc_continous_conversion.list 10_adc_continous_conversion.map default.size.stdout
+	-$(RM) 17_adc_interrupt.elf 17_adc_interrupt.hex 17_adc_interrupt.list 17_adc_interrupt.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)

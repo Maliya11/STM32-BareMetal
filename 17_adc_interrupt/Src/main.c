@@ -8,12 +8,31 @@ uint32_t sensor_value;
 
 int main(void)
 {
-
-	pa1_adc_init();
+	//uart1_tx_init();
+	pa1_adc_interrupt_init();
 	start_conversion();
 
 	while(1)
 	{
-		sensor_value = adc_read();
+
+	}
+}
+
+static void adc1_callback(void)
+{
+	sensor_value = ADC1->DR;
+	//printf("Sensor value : %d \n \r", sensor_value);
+}
+
+void ADC1_2_IRQHandler(void)
+{
+	/*Check for EOC in SR*/
+	if((ADC1->SR & SR_EOC)!=0)
+	{
+		/*Clear EOC flag*/
+		ADC1->SR |= SR_EOC;
+
+		//Do something
+		adc1_callback();
 	}
 }
