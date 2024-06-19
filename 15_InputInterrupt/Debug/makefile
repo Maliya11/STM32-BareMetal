@@ -33,37 +33,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 14_InputCapture
+BUILD_ARTIFACT_NAME := 15_InputInterrupt
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-14_InputCapture.elf \
+15_InputInterrupt.elf \
 
 MAP_FILES += \
-14_InputCapture.map \
+15_InputInterrupt.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-14_InputCapture.list \
+15_InputInterrupt.list \
 
 OBJCOPY_HEX += \
-14_InputCapture.hex \
+15_InputInterrupt.hex \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 14_InputCapture.elf secondary-outputs
+main-build: 15_InputInterrupt.elf secondary-outputs
 
 # Tool invocations
-14_InputCapture.elf 14_InputCapture.map: $(OBJS) $(USER_OBJS) C:\Users\ACER\Documents\GitHub\STM32-BareMetal\14_InputCapture\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "14_InputCapture.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\14_InputCapture\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="14_InputCapture.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+15_InputInterrupt.elf 15_InputInterrupt.map: $(OBJS) $(USER_OBJS) C:\Users\ACER\Documents\GitHub\STM32-BareMetal\15_InputInterrupt\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "15_InputInterrupt.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ACER\Documents\GitHub\STM32-BareMetal\15_InputInterrupt\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="15_InputInterrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -72,19 +72,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-14_InputCapture.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "14_InputCapture.list"
+15_InputInterrupt.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "15_InputInterrupt.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-14_InputCapture.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "14_InputCapture.hex"
+15_InputInterrupt.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "15_InputInterrupt.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 14_InputCapture.elf 14_InputCapture.hex 14_InputCapture.list 14_InputCapture.map default.size.stdout
+	-$(RM) 15_InputInterrupt.elf 15_InputInterrupt.hex 15_InputInterrupt.list 15_InputInterrupt.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
